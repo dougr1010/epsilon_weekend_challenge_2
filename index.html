@@ -5,6 +5,30 @@
    	  <title>Api Assignment</title>
       <link rel="stylesheet" href="style.css"/>
 
+<!-- take a stab at adding a google map -->
+<!-- ---------------------------------------------------------- -->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myMarker=new google.maps.LatLng(48.482903,-93.058681);
+
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(47.300754,-94.230248),
+    zoom:7,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      var marker=new google.maps.Marker({position:myMarker,});
+  marker.setMap(map);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<!-- ------------------------------------------------------------ -->
+
+
+
+
+
    </head>
    <body>
    		<h1>API Assignment</h1>
@@ -23,7 +47,15 @@
       <h3>They even sell food here, so I'll get some of that. A big old can of freeze-dried corn, that should do it. </h3>
       <div class='food-placeholder'></div>
 
-      <h3>So that's it, I'm ready for the new cabinless future, but its going to cost me. $<span class="coin"></span>, to be exact.
+      <h3>So that's it, I'm ready for the new cabinless future, but its going to cost me. $<span class="coin"></span>, to be exact.</h3>
+
+      <div class='space'></div>
+
+      <h3>Where should I set up my new portable cabin?  Voyageurs National Park would be nice.  How about Wooden Frog Campground on Lake Kabetogama?</h3>
+      <div class='map1-placeholder'></div>
+      <div id="googleMap" style="width:500px;height:380px;"></div>
+
+      <h3> Perfect! </h3>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="app.js"></script>

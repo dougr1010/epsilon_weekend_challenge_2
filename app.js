@@ -51,8 +51,9 @@ function displayTents(response) {
                     "</div>";
     myCost += parseFloat(response.Result[34].SuggestedRetailPrice);
     myCost += parseFloat(response.Result[17].SuggestedRetailPrice);
-    console.log("myCost: " + myCost);
+    console.log("myCost-tents: " + myCost);
     $('.tent-placeholder').append($myData);
+    return;
 }
 //---------------------------------------------------------------------------------
 function getFurniture(){
@@ -88,7 +89,7 @@ function displayFurniture(response) {
                     "</div>";
     myCost += parseFloat(response.Result[1].SuggestedRetailPrice);
     myCost += parseFloat(response.Result[4].SuggestedRetailPrice);
-    console.log("myCost: " + myCost);
+    console.log("myCost-furniture: " + myCost);
     $('.furniture-placeholder').append($myData);
 }
 //---------------------------------------------------------------------------------
@@ -130,7 +131,7 @@ function displayKitchen(response) {
     myCost += parseFloat(response.Result[23].SuggestedRetailPrice);
     myCost += parseFloat(response.Result[35].SuggestedRetailPrice);
     myCost += parseFloat(response.Result[3].SuggestedRetailPrice);
-    console.log("myCost: " + myCost);
+    console.log("myCost-kitchen: " + myCost);
     $('.kitchen-placeholder').append($myData);
 
     var $myData =   "<div class='content' " +
@@ -140,7 +141,7 @@ function displayKitchen(response) {
                              "<img src = '" + response.Result[17]['Images'].PrimaryMedium + "'</p>" +
                     "</div>";
     myCost += parseFloat(response.Result[17].SuggestedRetailPrice);
-    console.log("myCost: " + myCost);
+    console.log("myCost-food: " + myCost);
     $('.food-placeholder').append($myData);
 
 }
@@ -150,6 +151,7 @@ function displayCost() {
     console.log("display myCost: " + myCost);
     $('.coin').append(myCost);
 }
+//---------------------------------------------------------------------------------
 
 
 
